@@ -5,6 +5,9 @@ const playersRoute =require ('./routes/players.js')
 const mongoose = require ('mongoose');
 require('dotenv').config()
 
+// import dotenv from 'dotenv'
+// dotenv.config()
+
 const app = express();
 const PORT=5000;
 

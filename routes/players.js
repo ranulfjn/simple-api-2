@@ -1,28 +1,14 @@
 const  express = require ("express");
 const router= express.Router();
 const Players = require('../models/Players')
+const addUser = require('../controllers/players')
 
 router.get('/',(req,res)=>{
     res.send('All players')
 })
 
 
-router.post('/', async (req,res)=>{
-    const players = new Players({
-        firstName:req.body.firstName,
-        lastName:req.body.lastName
-    })
-
-    try{
-        const newPlayer = await players.save()
-        res.send(newPlayer)
-        
-    } catch(err)
-    {
-        res.send("Message:"+err);
-    }
-  
-})
+router.post('/', addUser)
 
 module.exports=router;
 
